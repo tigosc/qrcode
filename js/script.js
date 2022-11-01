@@ -37,7 +37,7 @@ $(document).ready(function () {
         });
         Instascan.Camera.getCameras().then(cameras => {
             if (cameras.length > 0) {
-                camera = cameras[0];
+                camera = cameras[1];
                 scanner.start(camera);
                 console.log(cameras.length);
             } else {
