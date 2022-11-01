@@ -74,6 +74,7 @@ $(document).ready(function () {
         max: 1440,
       },
     },
+    facingMode: "environment"
   };
 
   // use front face camera
