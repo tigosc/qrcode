@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Importando o bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">    
+        <title>Scan</title>
+    </head>
+    <body>
+        <div class="container pt-5">
+            <div class="row">
+                <div div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center">
+                    <h2>Leitor de etiqueta</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 pt-3">
+                    <button type="button" id="btnAbreModal" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ler etiqueta</button>
+                </div>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Centralize a imagem para leitura</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <video id="preview" style="max-width: 102%; padding-top: 5px; border-style: dashed"</video>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" id="btnFechaModal" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4 pt-3">
+                    <label for="txtPedido" class="form-label">Pedido</label>
+                    <input type="text" id="txtPedido" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 pt-3">
+                    <button type="button" id="btnConsulta" class="btn btn-outline-info">Consulta</button>
+                </div>
+            </div>
+        
+            <!-- <div class="row">
+                <div class="col-4 pt-3">
+                    <video id="preview" style="max-width: 102%; padding-top: 5px; border-style: dashed"</video>
+                </div>
+            </div> -->
+
+            <!-- <script>
+                let scanner = new Instascan.Scanner({
+                    video: document.getElementById('preview')
+                });
+                scanner.addListener('scan', function(content) {
+                    //alert('Escaneou o conteudo: ' + content);
+                    //window.open(content, "_blank");
+                    console.log(content);
+                });
+                Instascan.Camera.getCameras().then(cameras => {
+                    if (cameras.length > 0) {
+                        scanner.start(cameras[0]);
+
+                    } else {
+                        console.error("Não existe câmera no dispositivo!");
+                    }
+                });
+            </script> -->
+        
+            <!-- retorno ajax -->
+            <div class="carregamento"></div>
+        
+            <div class="tabelaTipo pt-3"></div>
+            <!-- fim -->
+        
+            <div class="row">
+                <div class="col-4 pt-3">
+                    <label for="txtQtdeVol" class="form-label">Volumes</label>
+                    <input type="text" id="txtQtdeVol" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col pt-3">
+                    <label for="txtObs" class="form-label">Observação</label>
+                    <textarea type="text" id="txtObs" class="form-control" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="pt-3">
+                <button type="button" class="btn btn-outline-success">Confirmar</button>
+            </div>
+        </div>
+    </body>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <!-- Importando o jQuery -->
+    <script type="text/javascript" src="js/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+</html>
