@@ -34,6 +34,7 @@ $(document).ready(function () {
             //alert('Escaneou o conteudo: ' + content);
             //window.open(content, "_blank");
             console.log(content);
+            alert(content);
         });
         Instascan.Camera.getCameras().then(cameras => {
             if (cameras.length > 0) {
